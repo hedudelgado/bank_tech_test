@@ -27,5 +27,10 @@ describe BankAccount do
 				subject.withdraw(500)
 				expect(subject.balance).to eq(500)
 			end
+		end 
+		describe "#statement" do 
+			it "has a history" do 
+				expect(subject.statement).to eq({})
+			end
 		end
 end
