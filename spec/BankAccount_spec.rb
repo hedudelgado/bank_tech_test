@@ -36,9 +36,9 @@ describe BankAccount do
 			it "has a empty by defaut history" do 
 				expect(subject.statement).to eq({})
 			end
-			it "has a history" do
+			it "has a history with credit, date and balance" do
 			 	subject.make_deposit(1000, "10/01/2012")
-				expect(subject.statement).to eq({credit: 1000, date: "10/01/2012"})
+				expect(subject.statement).to eq({credit: 1000, date: "10/01/2012", balance: 1000})
 			end
 		end
 end

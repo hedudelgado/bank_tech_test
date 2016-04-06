@@ -11,6 +11,7 @@ class BankAccount
 		increase_balance(amount)
 		@statement[:credit] = amount
 		@statement[:date] 	= date
+		@statement[:balance]= @balance
 	end
 
 	def withdraw(amount)
