@@ -8,16 +8,21 @@ class BankAccount
 		@history 		=	[]
 	end
 
+	def print_statement
+		puts 'date || credit || debit || balance'
+		@history.each do |x|
+			print "#{x[:date]}|| #{x[:credit]} || #{x[:debit]} || #{x[:balance]}" + "\n"
+		end
+	end
+
 	def make_deposit(amount,date=Date.new)
 		increase_balance(amount)
 		update_statement_credit(amount,date)
-		@history.push(@statement)
 	end
 
 	def withdraw(amount,date=Date.new)
 		decrease_balance(amount)
 		update_statement_debit(amount,date)
-		@history.push(@statement)
 	end
 
 
@@ -27,12 +32,14 @@ class BankAccount
 		@statement[:credit] = amount
 		@statement[:date] 	= date
 		@statement[:balance]= @balance
+		@history << @statement
 	end
-	
+
 	def update_statement_debit(amount,date)
 		@statement[:debit]  = amount
 		@statement[:date] 	= date
 		@statement[:balance]= @balance
+		@history << @statement
 	end
 
 	def increase_balance(amount)
