@@ -10,6 +10,10 @@ class BankAccount
 		increase_balance(amount)
 	end
 
+	def withdraw(amount)
+		decrease_balance(amount)
+	end
+
 
 	private
 
@@ -17,4 +21,7 @@ class BankAccount
 		@balance = @balance + amount
 	end
 
+	def decrease_balance(amount)
+		@balance = @balance - amount
+	end
 end
