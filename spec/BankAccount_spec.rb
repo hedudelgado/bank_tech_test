@@ -40,5 +40,9 @@ describe BankAccount do
 			 	subject.make_deposit(1000, "10/01/2012")
 				expect(subject.statement).to eq({credit: 1000, date: "10/01/2012", balance: 1000})
 			end
+			it "has a history with debit, date and balance" do
+			 	subject.withdraw(500, "10/01/2012")
+				expect(subject.statement).to eq({debit: 500, date: "10/01/2012", balance: -500})
+			end
 		end
 end
