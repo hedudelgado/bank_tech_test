@@ -9,9 +9,7 @@ class BankAccount
 
 	def make_deposit(amount,date=Date.new)
 		increase_balance(amount)
-		@statement[:credit] = amount
-		@statement[:date] 	= date
-		@statement[:balance]= @balance
+		update_statement(amount,date)
 	end
 
 	def withdraw(amount)
@@ -20,6 +18,12 @@ class BankAccount
 
 
 	private
+
+	def update_statement(amount,date)
+		@statement[:credit] = amount
+		@statement[:date] 	= date
+		@statement[:balance]= @balance
+	end
 
 	def increase_balance(amount)
 		@balance = @balance + amount
