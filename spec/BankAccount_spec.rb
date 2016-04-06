@@ -6,7 +6,7 @@ describe 'BankAccount' do
 		@account = BankAccount.new
 	end
 
-		it 'should has an add method' do
-			expect(@calculator).to respond_to(:add)
+		it 'should has a make_deposit method' do
+			expect(@account).to respond_to(:make_deposit)
 		end
 end
