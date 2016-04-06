@@ -7,7 +7,7 @@ class BankAccount
 		@statement 	= {}
 	end
 
-	def make_deposit(amount)
+	def make_deposit(amount,date=Date.new)
 		increase_balance(amount)
 	end
 
