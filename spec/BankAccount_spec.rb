@@ -19,6 +19,10 @@ describe BankAccount do
 				subject.make_deposit(1000)
 				expect(subject.balance).to eq(1000)
 			end
+			it "increase the balance takes also a date as argument" do 
+				subject.make_deposit(1000, "10/01/2012")
+				expect(subject.balance).to eq(1000)
+			end
 		end
 
 		describe "#withdraw" do 
@@ -29,8 +33,9 @@ describe BankAccount do
 			end
 		end 
 		describe "#statement" do 
-			it "has a history" do 
+			it "has a empty by defaut history" do 
 				expect(subject.statement).to eq({})
 			end
+		
 		end
 end
