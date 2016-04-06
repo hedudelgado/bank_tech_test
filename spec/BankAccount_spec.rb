@@ -13,4 +13,11 @@ describe BankAccount do
 		it 'has a balance' do
 			expect(subject.balance).to eq(0)
 		end
+
+		describe "#make_deposit" do 
+			it "increase the balance by entering an amount" do 
+				subject.make_deposit(1000)
+				expect(subject.balance).to eq(1000)
+			end
+		end
 end
